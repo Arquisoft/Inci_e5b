@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import uo.asw.inciDashboard_e5b.dbManagement.model.Agent;
+import uo.asw.agents_e5b.dbManagement.model.Agent;
 
 public interface AgentsRepository extends CrudRepository<Agent, Long>{
 	

@@ -8,7 +8,7 @@ import uo.asw.agents_e5b.agents.util.AgentMin;
 import uo.asw.agents_e5b.agents.util.Check;
 import uo.asw.agents_e5b.dbManagement.AgentsRepository;
 import uo.asw.agents_e5b.parser.reader.CSVKindsReader;
-import uo.asw.inciDashboard_e5b.dbManagement.model.Agent;
+import uo.asw.agents_e5b.dbManagement.model.Agent;
 
 @Service
 public class AgentsServiceImpl implements AgentsService {

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import uo.asw.agents_e5b.agents.service.AgentsService;
 import uo.asw.agents_e5b.agents.util.Check;
 import uo.asw.agents_e5b.parser.reader.CSVKindsReader;
-import uo.asw.inciDashboard_e5b.dbManagement.model.Agent;
+import uo.asw.agents_e5b.dbManagement.model.Agent;
 
 @Controller
 public class WebController {

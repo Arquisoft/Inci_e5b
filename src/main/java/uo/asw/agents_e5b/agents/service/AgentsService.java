@@ -1,7 +1,7 @@
 package uo.asw.agents_e5b.agents.service;
 
 import uo.asw.agents_e5b.agents.util.AgentMin;
-import uo.asw.inciDashboard_e5b.dbManagement.model.Agent;
+import uo.asw.agents_e5b.dbManagement.model.Agent;
 
 public interface AgentsService {
 
