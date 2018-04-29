@@ -43,7 +43,7 @@ public class FilterTest {
     
     private String jsonBasicIncidence = "{"
 			+ "\"identifier\": \"uuid\","
-			+ "\"login\": \"316683136\","
+			+ "\"login\": \"31668313G\","
 			+ "\"password\": \"1234\","
 			+ "\"kind\": \"Person\","
 			+ "\"name\": \"Incidencia\","
@@ -52,7 +52,7 @@ public class FilterTest {
 
     private String jsonIncidenceWithTagFuego = "{"
     		+ "\"identifier\": \"uuid\","
-    		+ "\"login\": \"316683136\","
+    		+ "\"login\": \"31668313G\","
     		+ "\"password\": \"1234\","
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
@@ -62,7 +62,7 @@ public class FilterTest {
     
     private String jsonIncidenceWithOutTagFuego = "{"
     		+ "\"identifier\": \"uuid\","
-    		+ "\"login\": \"316683136\","
+    		+ "\"login\": \"31668313G\","
     		+ "\"password\": \"1234\","
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
@@ -72,7 +72,7 @@ public class FilterTest {
     
     private String jsonIncidenceWithProperties1 = "{"
     		+ "\"identifier\": \"uuid\","
-    		+ "\"login\": \"316683136\","
+    		+ "\"login\": \"31668313G\","
     		+ "\"password\": \"1234\","
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
@@ -86,7 +86,7 @@ public class FilterTest {
         	
     private String jsonIncidenceWithProperties2 = "{"
     		+ "\"identifier\": \"uuid\","
-    		+ "\"login\": \"316683136\","
+    		+ "\"login\": \"31668313G\","
     		+ "\"password\": \"1234\","
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
@@ -100,7 +100,7 @@ public class FilterTest {
     
     private String jsonIncidenceWithOnlyOneProperty = "{"
     		+ "\"identifier\": \"uuid\","
-    		+ "\"login\": \"316683136\","
+    		+ "\"login\": \"31668313G\","
     		+ "\"password\": \"1234\","
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","

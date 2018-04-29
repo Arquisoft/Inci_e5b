@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import uo.asw.dbManagement.model.Agent;
@@ -32,6 +33,9 @@ public class InsertSampleDataService {
 	
 	@Autowired
 	private CategoriesRepository categoriesRepository;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@SuppressWarnings("serial")
 	@PostConstruct
@@ -39,9 +43,11 @@ public class InsertSampleDataService {
 		
 		
 		// Creamos agentes
-		Agent agent1 = new Agent("316683136", "1234", "Person");
+		Agent agent1 = new Agent("31668313G", "1234", "Person");
 		agent1.setName("Juan");
 		agent1.setEmail("email@email.com");
+		
+		agent1.setPassword(bCryptPasswordEncoder.encode(agent1.getPassword())); // ciframos la password del agente
 		
 		agentsRepository.save(agent1);
 	
@@ -108,12 +114,6 @@ public class InsertSampleDataService {
 		operatorsService.addOperator(opreator4);
 		operatorsService.addOperator(opreator5);
 		operatorsService.addOperator(opreator6);
-	
-		
-		
-		
-		
-		
 	
 	}
 	

@@ -53,7 +53,7 @@ public class RIncidencePTest {
     public void testRIncidencePBasicValidData() throws BusinessException {
 	    	String json = "{"
 	    					+ "\"identifier\": \"uuid\","
-			    			+ "\"login\": \"316683136\","
+			    			+ "\"login\": \"31668313G\","
 			    			+ "\"password\": \"1234\","
 			    			+ "\"kind\": \"Person\","
 			    			+ "\"name\": \"Incidencia\","
@@ -64,7 +64,7 @@ public class RIncidencePTest {
 	    	
 	    	Incidence incidenceTest = new Incidence("uuid"); 
 	    	incidenceTest
-			.setAgent(dbManagement.getAgent("316683136", "1234", "Person"))
+			.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
 			.setName("Incidencia")
 			.setDescription("Descripcion");
 	    	
@@ -80,7 +80,7 @@ public class RIncidencePTest {
     public void testRIncidencePValidData() throws BusinessException {
 	    	String json = "{"
 		    			+ "\"identifier\": \"uuid\","
-		    			+ "\"login\": \"316683136\","
+		    			+ "\"login\": \"31668313G\","
 		    			+ "\"password\": \"1234\","
 		    			+ "\"kind\": \"Person\","
 		    			+ "\"name\": \"Incidencia\","
@@ -106,7 +106,7 @@ public class RIncidencePTest {
 	    	Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-	    	.setAgent(dbManagement.getAgent("316683136", "1234", "Person"))
+	    	.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
 	    	.setName("Incidencia")
 	    	.setDescription("Descripcion")
 	    	.setLocation("1.4,12.3")
@@ -127,7 +127,7 @@ public class RIncidencePTest {
     public void testRIncidencePValidDataWithOperator() throws BusinessException {
 	    	String json = "{"
 	    					+ "\"identifier\": \"uuid\","
-			    			+ "\"login\": \"316683136\","
+			    			+ "\"login\": \"31668313G\","
 			    			+ "\"password\": \"1234\","
 			    			+ "\"kind\": \"Person\","
 			    			+ "\"name\": \"Incidencia\","
@@ -154,7 +154,7 @@ public class RIncidencePTest {
 	    Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-			.setAgent(dbManagement.getAgent("316683136", "1234", "Person"))
+			.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
 			.setOperator(dbManagement.getOperator("99999999A"))
 			.setName("Incidencia")
 			.setDescription("Descripcion")
@@ -179,7 +179,7 @@ public class RIncidencePTest {
     public void testRIncidencePValidDataOperatorDoesntExists() throws BusinessException {
 	    	String json = "{"
 	    			+ "\"identifier\": \"uuid\","
-	    			+ "\"login\": \"316683136\","
+	    			+ "\"login\": \"31668313G\","
 	    			+ "\"password\": \"1234\","
 	    			+ "\"kind\": \"Person\","
 	    			+ "\"name\": \"Incidencia\","
@@ -206,7 +206,7 @@ public class RIncidencePTest {
 	    	Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-	    	.setAgent(dbManagement.getAgent("316683136", "1234", "Person"))
+	    	.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
 	    	.setOperator(dbManagement.getOperator("XXXXX"))
 	    	.setName("Incidencia")
 	    	.setDescription("Descripcion")
@@ -226,7 +226,7 @@ public class RIncidencePTest {
     @Test(expected = BusinessException.class)
     public void testRIncidencePInvalidHasntGotIdentifier() throws BusinessException {
 	    	String json = "{"
-		    			+ "\"login\": \"316683136\","
+		    			+ "\"login\": \"31668313G\","
 		    			+ "\"password\": \"1234\","
 		    			+ "\"kind\": \"Person\","
 		    			+ "\"name\": \"Incidencia\","

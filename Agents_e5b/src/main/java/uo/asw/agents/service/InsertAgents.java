@@ -15,11 +15,11 @@ public class InsertAgents {
 	
 	@PostConstruct
 	public void init() {
-		Agent agent1 = new Agent("31668313G", "1234", "Person");
+		// Agent agent1 = new Agent("31668313G", "1234", "Person"); Este agente se inserta en Dashboard
 		Agent agent2 = new Agent("A58818501", "1234", "Entity");
 		Agent agent3 = new Agent("525695S", "1234", "Sensor");
 		
-		agentsService.addAgent(agent1);
+		//agentsService.addAgent(agent1);
 		agentsService.addAgent(agent2);
 		agentsService.addAgent(agent3);
 	}

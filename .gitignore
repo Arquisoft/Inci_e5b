@@ -1,3 +1,6 @@
+#Ficheros de la creacion de la BD hsqldb
+hsqldb/bin/test.*
+
 # Compiled class file
 *.class
 
