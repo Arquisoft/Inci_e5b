@@ -11,7 +11,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.zip
@@ -28,6 +27,9 @@ target/
 ##Ficheros ignorados en Agents_e5b
 .idea/
 participants0.iml
+
+# Eclipse Core
+.project
 
 # Tern plugin
 .tern-project
