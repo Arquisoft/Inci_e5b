@@ -4,10 +4,12 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">	
-	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+		
 	<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/custom.css" />
@@ -66,7 +68,7 @@ $(document).ready(function(){
   
 
 </script>
- 
+	
 </head>
 
 <body>
@@ -74,7 +76,7 @@ $(document).ready(function(){
 	
 	<div class="container" style="text-align: center">
 		<h2>Incidencias</h2>
-					<div class="table-responsive">
+			<div id="table-responsive" class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -106,7 +108,30 @@ $(document).ready(function(){
 					</tbody>
 				</table>
 			</div>
-			       <h3> Gráfico que representa el índice de incidencias Peligrosas y no Peligrosas </h3>
+			
+		<!-- WebSockets -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var incidencesList = $("#table-responsive");
+
+				// defined a connection to a new socket endpoint
+				var socket = new SockJS('/incidences/currentIncidences');
+
+				var stompClient = Stomp.over(socket);
+
+				stompClient.connect({}, function(frame) {
+					// subscribe to the /topic/message endpoint
+					stompClient.subscribe("/incidences/currentIncidences", function(data) {
+						var incidence = data.body;
+						//Aqui hay que añadir la nueva incidencia a lal ista de incidencias
+						//¿?¿?¿
+						incidencesList.append("<li>" + incidence + "</li>");
+					});
+				});
+			});
+		</script>
+		
+		<h3> Gráfico que representa el índice de incidencias Peligrosas y no Peligrosas </h3>
 			      <!--Div that will hold the pie chart-->
 	    <div align=center id="chart_div"></div>
         
