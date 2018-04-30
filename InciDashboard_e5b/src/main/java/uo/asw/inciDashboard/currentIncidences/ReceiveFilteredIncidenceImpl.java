@@ -14,13 +14,7 @@ import uo.asw.dbManagement.model.Operator;
 public class ReceiveFilteredIncidenceImpl implements ReceiveFilteredIncidence {
 	
 	List<Incidence> listaincidencias = new ArrayList<Incidence>();
-	
-	/* TODO
-	 * El método ReceiveFilteredIncidence se encarga de recibir un objeto Incidence del componente Filter.
-	 * La información de dicho objeto es la que será mostrada por la interfaz web de forma dinámica. 
-	 * Si la incidencia está marcada como peligrosa, se deberá dar un aviso por la interfaz para que los operarios se percaten de ello.
-	 *  
-	 */
+
 	@Override
 	public void receiveFilteredIncidence(Incidence incidence) {
 		listaincidencias.add(incidence);
