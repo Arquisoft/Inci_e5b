@@ -14,7 +14,7 @@
 			<script th:inline="javascript">
 			  /*<![CDATA[*/
 				  
-			function updateSelects(){
+			function updateSelects(filter){
 				
 		        if ($("#filterResponse").val() == "acceptAll") {
 		        		$("#divApplyOn").hide(); $("#divPropertyType").hide(); $("#divFilterOperation").hide(); $("#divTag").hide(); $("#divPropertyName").hide(); $("#divPropertyValue").hide();
@@ -27,15 +27,21 @@
 		        			$("#divPropertyType").hide(); $("#divPropertyName").hide(); $("#divPropertyValue").hide();
 		        			
 		        			 $("#filterOperation").html("<option value='contains'>Contiene</option><option value='notContains'>No contiene</option>");
+		        			 if(filter.filterOperation != null && (filter.filterOperation == "contains" || filter.filterOperation == "notContains"))
+		     					$( "#filterOperation" ).val( filter.filterOperation );
 		        		}else{//property
 		        			$("#divTag").hide();
 		        			$("#divFilterOperation").show(); $("#divPropertyType").show(); $("#divPropertyName").show(); $("#divPropertyValue").show();
 		        			
 		        			if($("#propertyType").val() == "string" || $("#propertyType").val() == "boolean"){
 		        				$("#filterOperation").html("<option value='equals'>Igual</option><option value='notEquals'>Distinto</option>");
+		        				if(filter.filterOperation != null && (filter.filterOperation == "equals" || filter.filterOperation == "notEquals"))
+		        					$( "#filterOperation" ).val( filter.filterOperation );
 		        			}
 		        			else if($("#propertyType").val() == "double"){
 		        				$("#filterOperation").html("<option value='greater'>Mayor</option><option value='less'>Menor</option>");
+		        				if(filter.filterOperation != null && (filter.filterOperation == "greater" || filter.filterOperation == "less"))
+		        					$( "#filterOperation" ).val( filter.filterOperation );
 		        			}
 		        		}
 		        }
@@ -54,21 +60,22 @@
 				if(filter.propertyType != null)
 					$( "#propertyType" ).val( filter.propertyType );
 				
+				console.log(filter.filterOperation);
 				if(filter.filterOperation != null)
 					$( "#filterOperation" ).val( filter.filterOperation );
 		         				
-				updateSelects();
+				updateSelects(filter);
 				
 			    $("#filterResponse").change(function () {
-			        updateSelects();
+			        updateSelects(filter);
 			    });
 		         				
 			    $("#applyOn").change(function () {
-			        updateSelects();
+			        updateSelects(filter);
 			    });
 		         				
 			    $("#propertyType").change(function () {
-			        updateSelects();
+			        updateSelects(filter);
 			    });
 			    
 			    $("#submit").click(function(){
