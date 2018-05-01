@@ -38,7 +38,7 @@ La codecov de Inci_e5b no está bien, solo tiene en cuenta Agents.
 5. Arrancar Agents
    * Ejecutar el siguiente comando, estando situado en la carpeta Agents_e5b: ``mvn spring-boot:run``
 
-## Interfaz HTML
+## Probar Dashboard
   1. Escribir en el navegador: http://localhost:8090/ para acceder a la parte de Dashboard
   2. En el menu hacer click en identificarse.
   3. Deberá introducir su identifier y password.
@@ -51,3 +51,21 @@ La codecov de Inci_e5b no está bien, solo tiene en cuenta Agents.
   9. ``Incidencias/Por categorías`` puede ver las incidencias según una determinada categoría.
   10. ``Filtro`` se puede actualizar el filtro, para modificar las incidencias que se muestran en la vista de incidencias actuales o para marcar determinadas incidencias como peligrosas.
   
+## Probar Agents
+  1. Escribir en el navegador: http://localhost:8080/
+  2. Proporcionar los datos de login para los 3 agentes disponibles (uno de cada tipo):
+     * Login: 31668313G  Password: 1234  Kind: Person
+     * Login: A58818501  Password: 1234  Kind: Entity
+     * Login: 525695S    Password: 1234  Kind: Sensor
+  3. Aparecerá la pantalla que muestra los datos del agente
+     * Se puede ir a la pantalla de cambio de datos
+     * Se puede ir a la pantalla de inicio
+  4. Cambio de datos:
+     * Se puede cambiar la contraseña
+       * Escribir la contraseña antigua
+       * Escribir la contraseña nueva
+     * Se puede cambiar el email del agente, siempre que sea una dirección de email válida 
+     * Se puede cambiar el nombre del agente, siempre que no esté en blanco
+     * Se puede cambiar la localización del agente u omitirla
+     * Se puede ir a la pantalla de vista de datos del agente
+     * Se puede ir a la pantalla de inicio
