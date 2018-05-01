@@ -50,6 +50,8 @@ La codecov de Inci_e5b no está bien, solo tiene en cuenta Agents.
   8. ``Incidencias/Asignadas a mí`` muestra las incidencias asignadas a el operario que ha iniciado sesión.
   9. ``Incidencias/Por categorías`` puede ver las incidencias según una determinada categoría.
   10. ``Filtro`` se puede actualizar el filtro, para modificar las incidencias que se muestran en la vista de incidencias actuales o para marcar determinadas incidencias como peligrosas.
+
+Para más información acerca del módulo Dashboard, consultar la siguiente guía: https://github.com/Arquisoft/InciDashboard_e5b/blob/master/README.md
   
 ## Probar Agents
   1. Escribir en el navegador: http://localhost:8080/
