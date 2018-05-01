@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import uo.asw.agents.service.AgentsService;
+import uo.asw.agents.util.CSVKindsReader;
 import uo.asw.agents.util.Check;
 import uo.asw.dbManagement.model.Agent;
-import uo.asw.parser.reader.CSVKindsReader;
 
 @Controller
 public class WebController {
@@ -174,32 +174,6 @@ public class WebController {
 			model.addAttribute("resultado", "Agent name updated to: " + nombre);
 			
 			return "view";	
-		}
-		return "error";
-	}
-	
-	/**
-	 * Modifica el kind del usuario en sesión, comprueba que el kind es correcto
-	 * segun una lista y muestra el resultado sobre el HTML view, o redirige a la 
-	 * pagina de error en caso de que no se encuentre el usuario en sesion
-	 * @param session objeto session del usuario registrado
-	 * @param kind nuevo tipo de usuario
-	 * @param model
-	 * @return view si el usuario esta registrado, error si el usuario no esta registrado
-	 */
-	@RequestMapping(value = "/changeKind", method = RequestMethod.POST)
-	public String changeKind(HttpSession session, @RequestParam String kind, Model model){
-
-		Agent agent = (Agent) session.getAttribute("agent");
-		if(agent!=null) {
-			if(!kind.isEmpty() && Check.validateKind(kind)){
-				agent.setKind(kind);
-				agentsService.changeKind(agent.getIdentifier(), agent.getPassword(), agent.getKind(), kind);
-				model.addAttribute("resultado", "Agent kind updated to: " + kind);
-			}else{
-				model.addAttribute("resultado", "Agent kind " + kind + " not valid.");
-			}
-			return "view";
 		}
 		return "error";
 	}

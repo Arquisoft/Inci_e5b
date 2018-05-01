@@ -52,20 +52,6 @@ public interface AgentsService {
 	boolean changeName(String login, String password, String kind, String newName);
 	
 	/**
-	 * Permite cambiar el nombre de un agente cuyos login, password y kind
-	 * coincidan con los pasados como parametro. Devuelve true si se ha
-	 * encontrado el agente y se ha cambiado el nombre correctamente, y
-	 * falso en caso contrario.
-	 * 
-	 * @param login
-	 * @param password
-	 * @param kind
-	 * @param newName
-	 * @return
-	 */
-	boolean changeKind(String login, String password, String kind, String newKind);
-	
-	/**
 	 * Permite cambiar la localizacion de un agente cuyos login, password y kind
 	 * coincidan con los pasados como parametro. Devuelve true si se ha
 	 * encontrado el agente y se ha cambiado la localizacion correctamente, y

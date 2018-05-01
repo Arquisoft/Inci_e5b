@@ -17,9 +17,9 @@ import org.springframework.web.context.WebApplicationContext;
 
 import uo.asw.Application;
 import uo.asw.agents.service.AgentsService;
+import uo.asw.agents.util.CSVKindsReader;
 import uo.asw.dbManagement.AgentsRepository;
 import uo.asw.dbManagement.model.Agent;
-import uo.asw.parser.reader.CSVKindsReader;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

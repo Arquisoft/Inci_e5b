@@ -5,10 +5,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import uo.asw.agents.util.AgentMin;
+import uo.asw.agents.util.CSVKindsReader;
 import uo.asw.agents.util.Check;
 import uo.asw.dbManagement.AgentsRepository;
 import uo.asw.dbManagement.model.Agent;
-import uo.asw.parser.reader.CSVKindsReader;
 
 @Service
 public class AgentsServiceImpl implements AgentsService {
@@ -58,20 +58,6 @@ public class AgentsServiceImpl implements AgentsService {
 			agentDAO.updateName(newName,agent.getIdentifier());
 			
 			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean changeKind(String login, String password, String kind, String newKind) {
-		Agent agent = agentDAO.getAgent(login, password, kind);
-		
-		if(agent!=null) {
-			if(!newKind.isEmpty() && Check.validateKind(newKind)){
-				agent.setKind(newKind);
-				agentDAO.updateKind(newKind,agent.getIdentifier());
-				return true;
-			}
 		}
 		return false;
 	}

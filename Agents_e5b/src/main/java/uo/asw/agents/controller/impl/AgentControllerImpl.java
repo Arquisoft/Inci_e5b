@@ -74,10 +74,6 @@ public class AgentControllerImpl implements AgentController{
 			infoChangedCorrectly = agentsService.changeName(login, password, kind, newInfo);
 			break;
 			
-		case "kind":
-			infoChangedCorrectly = agentsService.changeKind(login, password, kind, newInfo);
-			break;
-			
 		case "location":
 			infoChangedCorrectly = agentsService.changeLocation(login, password, kind, newInfo);
 			break;
