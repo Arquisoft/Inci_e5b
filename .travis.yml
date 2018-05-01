@@ -25,7 +25,5 @@ before_script:
 - sleep 3 # give xvfb some time to start
 script: 
 - nohup bash -c "cd hsqldb/bin && ./runServer.sh &"
-- nohup bash -c "cd Agents_e5b"
-- "mvn test"
-- nohup bash -c "cd InciDashboard_e5b"
-- "mvn test"
+- nohup bash -c "cd Agents_e5b && mvn test"
+- nohup bash -c "cd InciDashboard_e5b && mvn test"
