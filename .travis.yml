@@ -27,5 +27,5 @@ script:
 - nohup bash -c "cd hsqldb/bin && ./runServer.sh &"
 - "cd InciDashboard_e5b"
 - "mvn test"
-- "cd Agents_e5b"
+- "cd ../Agents_e5b"
 - "mvn test"
