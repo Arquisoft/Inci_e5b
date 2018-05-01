@@ -33,23 +33,22 @@ public class InsertSampleDataService {
 	
 	@Autowired
 	private CategoriesRepository categoriesRepository;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+	
 	@SuppressWarnings("serial")
 	@PostConstruct
 	public void init() {
 		
-		
 		// Creamos agentes
 		Agent agent1 = new Agent("31668313G", "1234", "Person");
-		agent1.setName("Juan");
-		agent1.setEmail("email@email.com");
-		
-		agent1.setPassword(bCryptPasswordEncoder.encode(agent1.getPassword())); // ciframos la password del agente
-		
-		agentsRepository.save(agent1);
+  		agent1.setName("Juan");
+  		agent1.setEmail("email@email.com");
+  		
+ 		agent1.setPassword(bCryptPasswordEncoder.encode(agent1.getPassword())); // ciframos la password del agente
+ 		 		
+  		agentsRepository.save(agent1);
 	
 		//Creamos categorias
 		Category categoriaTiempo=new Category("tiempo");

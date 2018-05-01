@@ -6,7 +6,7 @@ public interface SetFilter {
 	
 	public String setFilterGet(Model model);
 	
-	public String setFilterPost(String filterResponse, //TODO . quizas hay que poner los @
+	public String setFilterPost(String filterResponse,
 			String applyOn, 
 			String propertyType,
 			String filterOperation,

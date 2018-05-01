@@ -54,8 +54,7 @@ public class Incidence {
 	
 	public Incidence() {}
 	
-	/** TODO Constructor hecho para hacer pruebas luego que se borre
-	 * 
+	/**
 	 * @param id
 	 * @param identifier
 	 * @param agent

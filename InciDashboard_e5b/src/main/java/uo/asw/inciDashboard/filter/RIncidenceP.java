@@ -49,7 +49,6 @@ public class RIncidenceP {
 				new HashSet<String>(Arrays.asList(tagsArray)) : 
 					new HashSet<String>();
 		
-//		Map<String, Object> additional ;
 		Set<Property> properties =  getSetProperties(names, json) != null ? 
 				 getSetProperties(names, json) : 
 					new HashSet<Property>();
@@ -59,10 +58,14 @@ public class RIncidenceP {
 		String expiration = getString(names, json, "expiration");
 		
 		Agent agent = dbManagement.getAgent(login,password,kind);
+		
 		Operator operator = dbManagement.getOperator(operatorIdentifier);
 		
 		Check.isNotNull(identifier, "Every incidence must have an identifier");
 		Check.isNotNull(agent, "Every incidence must have an existing agent");
+		
+		// Creamos una lista de incidencias vacias para el agente temporal
+		agent.setIncidences(new HashSet<Incidence>());
 		
 		Incidence incidence = new Incidence(identifier);
 		incidence
@@ -75,7 +78,7 @@ public class RIncidenceP {
 				.setProperties(properties)
 				.setStatus(status)
 				.setExpiration(expiration);
-				
+		
 		return incidence;
 	}
 	

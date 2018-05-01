@@ -22,7 +22,7 @@ public class Operator {
 	
 	private String password;
 	@Transient
-	private String passwordConfirm; //TODO - quitar?
+	private String passwordConfirm;
 		
 	@OneToMany(mappedBy="operator")
 	private Set<Incidence> incidences;

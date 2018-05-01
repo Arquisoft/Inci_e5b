@@ -1,5 +1,6 @@
 package uo.asw.dbManagement.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -35,7 +36,7 @@ public class Agent {
 	private String kind;
 	
 	@OneToMany(mappedBy = "agent")
-	private Set<Incidence> incidences;
+	private Set<Incidence> incidences = new HashSet<>();
 	
 	public Agent(){}
 	

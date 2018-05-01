@@ -15,13 +15,12 @@ public class MessageListener {
 
     @Autowired
 	private ReceiveIncidence receiveIncidence;
-    
+
     @KafkaListener(topics = "incidences")
     public void listen(String data) {
         logger.info("New message received: \"" + data + "\"");
+
         receiveIncidence.receiveIncidence(data);
     }
-
-
 
 }
