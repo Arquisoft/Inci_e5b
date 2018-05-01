@@ -69,3 +69,5 @@ La codecov de Inci_e5b no está bien, solo tiene en cuenta Agents.
      * Se puede cambiar la localización del agente u omitirla
      * Se puede ir a la pantalla de vista de datos del agente
      * Se puede ir a la pantalla de inicio
+
+Para más información acerca del módulo Agents y de cómo enviar peticiones a su API Rest para obtener los datos de un agente, consultar la siguiente guía, donde se explica todo más en detalle: https://github.com/Arquisoft/Agents_e5b/blob/master/README.md 
