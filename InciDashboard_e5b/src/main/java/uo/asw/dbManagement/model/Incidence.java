@@ -92,6 +92,12 @@ public class Incidence {
 		this.description = description;
 		this.tags = tags;
 	}
+	
+	public Incidence(Set<Property> properties, String name, String description) {
+		this.name = name;
+		this.description = description;
+		this.properties = properties;
+	}
 
 	public Incidence(String identifier) {
 		this.identifier = identifier;
