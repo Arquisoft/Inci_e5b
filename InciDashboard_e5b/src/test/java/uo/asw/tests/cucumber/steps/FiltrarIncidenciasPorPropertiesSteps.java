@@ -1,6 +1,8 @@
 package uo.asw.tests.cucumber.steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.HashSet;
 import java.util.List;
@@ -22,7 +24,7 @@ import uo.asw.dbManagement.model.Property;
 
 @ContextConfiguration(classes=InciDashboardE5bApplication.class, loader=SpringApplicationContextLoader.class)
 @SpringBootTest
-public class MarcarIncidenciasComoPeligrosasPorPropertiesSteps {
+public class FiltrarIncidenciasPorPropertiesSteps {
 	
 	@Autowired
 	private DBManagementFacade dbManagement;
@@ -32,8 +34,8 @@ public class MarcarIncidenciasComoPeligrosasPorPropertiesSteps {
 	private String propertyName;
 	private String propertyValue;
 
-	@Given("^una lista de incidencias con propiedades:$")
-	public void una_lista_de_incidencias_con_propiedades(List<IncidenceWith1Property> incidencesData) throws Throwable {
+	@Given("^una lista de incidencias con properties:$")
+	public void una_lista_de_incidencias_con_properties(List<IncidenceWith1Property> incidencesData) throws Throwable {
 		int i = 0;
 		for (IncidenceWith1Property incidenceData : incidencesData) {
 			// Guardamos la propiedad en un set
@@ -46,19 +48,19 @@ public class MarcarIncidenciasComoPeligrosasPorPropertiesSteps {
 		}
 	}
 
-	@Given("^la propiedad con nombre \"([^\"]*)\" cuyo valor debe ser mayor de (\\d+)$")
-	public void la_propiedad_con_nombre_cuyo_valor_debe_ser_mayor_de(String propertyName, int propertyValue) throws Throwable {
+	@Given("^la property con nombre \"([^\"]*)\" cuyo valor debe ser mayor de (\\d+)$")
+	public void la_property_con_nombre_cuyo_valor_debe_ser_mayor_de(String propertyName, int propertyValue) throws Throwable {
 	    this.propertyName = propertyName;
 	    this.propertyValue = propertyValue + "";
 	}
 
-	@When("^el filtro se configura para marcar como peligrosas las incidencias cuya temperatura sea superior a (\\d+)$")
-	public void el_filtro_se_configura_para_marcar_como_peligrosas_las_incidencias_cuya_temperatura_sea_superior_a(int arg1) throws Throwable {
+	@When("^el filtro se configura para solo dejar pasar las incidencias cuya temperatura sea superior a (\\d+)$")
+	public void el_filtro_se_configura_para_solo_dejar_pasar_las_incidencias_cuya_temperatura_sea_superior_a(int arg1) throws Throwable {
 		// Cargamos el filtro de la BD
 		Filter filter = dbManagement.getFilter();
 	    
 		// Lo configuramos para marcar como peligrosas las incidencias que contengan la propiedad temperatura con valor mayor de 10
-	    filter.setFilterResponse("markAsDangerous").
+	    filter.setFilterResponse("accept").
 			setApplyOn("property").
 			setFilterOperation("greater").
 			setPropertyType("double").
@@ -69,8 +71,8 @@ public class MarcarIncidenciasComoPeligrosasPorPropertiesSteps {
 	    dbManagement.updateFilter(filter);
 	}
 
-	@When("^se aplica el filtro sobre la lista de incidencias con propiedades$")
-	public void se_aplica_el_filtro_sobre_la_lista_de_incidencias_con_propiedades() throws Throwable {
+	@When("^se aplica el filtro sobre la lista de incidencias con properties$")
+	public void se_aplica_el_filtro_sobre_la_lista_de_incidencias_con_properties() throws Throwable {
 		// Recuperamos el filtro de la BD
 		Filter filter = dbManagement.getFilter();
 		
@@ -80,17 +82,13 @@ public class MarcarIncidenciasComoPeligrosasPorPropertiesSteps {
 		}
 	}
 
-	@Then("^solamente la incidencia con nombre inc(\\d+) es marcada como peligrosa$")
-	public void solamente_la_incidencia_con_nombre_inc_es_marcada_como_peligrosa(int arg1) throws Throwable {
-		// Revisamos los nombres de las incidencias
+	@Then("^solamente la incidencia con nombre inc(\\d+) pasa el filtro$")
+	public void solamente_la_incidencia_con_nombre_inc_pasa_el_filtro(int arg1) throws Throwable {		
+		// Comprobamos que la unica incidencia que pasa el filtro es la que se llama inc1
+		assertNotNull(incidences[0]); // inc1
 		assertEquals("inc1", incidences[0].getName());
-		assertEquals("inc2", incidences[1].getName());
-		assertEquals("inc3", incidences[2].getName());
-		
-		// Comprobamos que la unica incidencia marcada como peligrosa sea la que se llama inc1
-		assertEquals(true, incidences[0].isDangerous());
-		assertEquals(false, incidences[1].isDangerous());
-		assertEquals(false, incidences[2].isDangerous());
+		assertNull(incidences[1]); // inc2
+		assertNull(incidences[2]); // inc3
 	}
 	
 	/**

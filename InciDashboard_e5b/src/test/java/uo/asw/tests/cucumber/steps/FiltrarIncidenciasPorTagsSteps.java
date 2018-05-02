@@ -1,6 +1,8 @@
 package uo.asw.tests.cucumber.steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,7 +23,7 @@ import uo.asw.dbManagement.model.Incidence;
 
 @ContextConfiguration(classes=InciDashboardE5bApplication.class, loader=SpringApplicationContextLoader.class)
 @SpringBootTest
-public class MarcarIncidenciasComoPeligrosasPorTagsSteps {
+public class FiltrarIncidenciasPorTagsSteps {
 	
 	@Autowired
 	private DBManagementFacade dbManagement;
@@ -29,12 +31,10 @@ public class MarcarIncidenciasComoPeligrosasPorTagsSteps {
 	private Incidence[] incidences = new Incidence[3];
 	
 	private String tag;
-	
-	// Escenario 1: Marcar incidencias con tags como peligrosas
-	
-	@Given("^una lista de incidencias:$")
-	public void una_lista_de_incidencias(List<IncidenceWith2TagsData> incidencesData) throws Throwable {
-	    int i = 0;
+
+	@Given("^una lista de incidencias con tags:$")
+	public void una_lista_de_incidencias_con_tags(List<IncidenceWith2TagsData> incidencesData) throws Throwable {
+		int i = 0;
 		for (IncidenceWith2TagsData incidenceData : incidencesData) {
 	    		// Guardamos los tags en un set
 	    		Set<String> tags = new HashSet<>();
@@ -47,28 +47,28 @@ public class MarcarIncidenciasComoPeligrosasPorTagsSteps {
 		}
 	}
 
-	@Given("^el tag \"([^\"]*)\"$")
+	@Given("^el tag con valor \"([^\"]*)\"$")
 	public void el_tag(String tag) throws Throwable {
 	    this.tag = tag;
 	}
 
-	@When("^el filtro se configura para marcar como peligrosas las incidencias que contengan el tag$")
-	public void el_filtro_se_configura_para_marcar_como_peligrosas_las_incidencias_que_contengan_el_tag() throws Throwable {
-	    // Cargamos el filtro de la BD
+	@When("^el filtro se configura para solo dejar pasar las incidencias que contengan el tag$")
+	public void el_filtro_se_configura_para_solo_dejar_pasar_las_incidencias_que_contengan_el_tag() throws Throwable {
+		// Cargamos el filtro de la BD
 		Filter filter = dbManagement.getFilter();
 	    
-		// Lo configuramos para marcar como peligrosas las incidencias que contenga el tag indicado
-	    filter.setFilterResponse("markAsDangerous").
-			setApplyOn("tag").
+		// Lo configuramos para marcar como peligrosas las incidencias que contengan la propiedad temperatura con valor mayor de 10
+	    filter.setFilterResponse("accept").
+		    setApplyOn("tag").
 			setFilterOperation("contains").
 			setTag(tag);
 	    
 	    // Salvamos el filtro en BD
 	    dbManagement.updateFilter(filter);
 	}
-	
-	@When("^se aplica el filtro sobre la lista de incidencias$")
-	public void se_aplica_el_filtro_sobre_la_lista_de_incidencias() throws Throwable {
+
+	@When("^se aplica el filtro sobre la lista de incidencias con tags$")
+	public void se_aplica_el_filtro_sobre_la_lista_de_incidencias_con_tags() throws Throwable {
 		// Recuperamos el filtro de la BD
 		Filter filter = dbManagement.getFilter();
 		
@@ -78,17 +78,13 @@ public class MarcarIncidenciasComoPeligrosasPorTagsSteps {
 		}
 	}
 
-	@Then("^solamente la incidencia inc(\\d+) es marcada como peligrosa$")
-	public void solamente_la_incidencia_inc_es_marcada_como_peligrosa(int arg1) throws Throwable {
-		// Revisamos los nombres de las incidencias
+	@Then("^solamente la incidencia inc(\\d+) pasa el filtro$")
+	public void solamente_la_incidencia_inc_pasa_el_filtro(int arg1) throws Throwable {		
+		// Comprobamos que la unica incidencia que pasa el filtro es la que se llama inc1
+		assertNotNull(incidences[0]); // inc1
 		assertEquals("inc1", incidences[0].getName());
-		assertEquals("inc2", incidences[1].getName());
-		assertEquals("inc3", incidences[2].getName());
-		
-		// Comprobamos que la unica incidencia marcada como peligrosa sea la que se llama inc1
-		assertEquals(true, incidences[0].isDangerous());
-		assertEquals(false, incidences[1].isDangerous());
-		assertEquals(false, incidences[2].isDangerous());
+		assertNull(incidences[1]); // inc2
+		assertNull(incidences[2]); // inc3
 	}
 	
 	/**
