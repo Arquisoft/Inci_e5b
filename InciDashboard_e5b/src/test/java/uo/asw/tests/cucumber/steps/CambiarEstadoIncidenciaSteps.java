@@ -1,6 +1,6 @@
 package uo.asw.tests.cucumber.steps;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationContextLoader;
@@ -16,7 +16,7 @@ import uo.asw.dbManagement.model.Incidence;
 
 @ContextConfiguration(classes=InciDashboardE5bApplication.class, loader=SpringApplicationContextLoader.class)
 @SpringBootTest
-public class PruebaSteps {
+public class CambiarEstadoIncidenciaSteps {
 	
 	@Autowired
 	private DBManagementFacade dbManagement;
@@ -51,7 +51,7 @@ public class PruebaSteps {
 
 	@Then("^la incidencia tiene el estado \"([^\"]*)\"$")
 	public void la_incidencia_tiene_el_estado(String status) throws Throwable {
-		assertTrue(incidence.getStatus().equals(status));
+		assertEquals(status, incidence.getStatus());
 	}
 
 }

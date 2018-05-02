@@ -86,6 +86,12 @@ public class Incidence {
 		this.expiration = expiration;
 		this.dangerous = dangerous;
 	}
+	
+	public Incidence(String name, String description, Set<String> tags) {
+		this.name = name;
+		this.description = description;
+		this.tags = tags;
+	}
 
 	public Incidence(String identifier) {
 		this.identifier = identifier;

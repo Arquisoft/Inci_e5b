@@ -4,8 +4,8 @@ Feature: modificar una incidencia
     Given el operario con identificador "99999999A"
     	And la primera de las incidencias de su lista de incidencias asignadas
     		
-    When el operario cambia el estado de la incidencia por "Cerrada"
+    When el operario cambia el estado de la incidencia por "closed"
     And la incidencia se actualiza en la base de datos
     And la incidencia se recupera de nuevo de la base de datos
     
-    Then la incidencia tiene el estado "Cerrada"
+    Then la incidencia tiene el estado "closed"
