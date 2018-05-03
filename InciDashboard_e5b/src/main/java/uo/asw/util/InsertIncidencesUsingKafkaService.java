@@ -39,9 +39,9 @@ public class InsertIncidencesUsingKafkaService {
     			+ "\"location\": \"43.35,-5.85\","
     			+ "\"tags\": [\"tag1\",\"tag2\"],"
     			+ "\"properties\": ["
-    			+ "{\"prop1\": \"val1\"},"
-    			+ "{\"prop2\": \"val2\"}"
-    			+ "],"
+	    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
+	    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
+			+ "],"
     			+ "\"status\": \"open\","
     			+ "\"expiration\": \"14:60\""
 			+ "}";
