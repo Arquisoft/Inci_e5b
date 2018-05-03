@@ -111,8 +111,9 @@ public class RIncidenceP {
 		for (int i = 0; i < jsonArray.length(); i++) {
 			JSONObject jsonProperty = jsonArray.getJSONObject(i);
 			
-			String propertyName = JSONObject.getNames(jsonProperty)[0];
-			String propertyValue = jsonProperty.getString(propertyName);
+//			String propertyName = JSONObject.getNames(jsonProperty)[0];
+			String propertyName = jsonProperty.getString("name");
+			String propertyValue = jsonProperty.getString("value");
 			
 			Property property = new Property(propertyName, propertyValue);
 			properties.add(property);

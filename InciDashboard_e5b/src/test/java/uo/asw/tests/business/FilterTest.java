@@ -77,11 +77,11 @@ public class FilterTest {
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
     		+ "\"description\": \"Descripcion\","
-    		+ "\"properties\": ["
-			+ "{\"temperatura\": \"20\"},"
-			+ "{\"peligro\": \"true\"},"
-			+ "{\"aire\": \"mucho\"}"
-			+ "]"
+		+ "\"properties\": ["
+			+ "{\"name\":\"temperatura\",\"value\":\"20\"},"
+			+ "{\"name\":\"peligro\",\"value\":\"true\"},"
+			+ "{\"name\":\"aire\",\"value\":\"mucho\"}"
+		+ "],"
     		+ "}";
         	
     private String jsonIncidenceWithProperties2 = "{"
@@ -91,11 +91,11 @@ public class FilterTest {
     		+ "\"kind\": \"Person\","
     		+ "\"name\": \"Incidencia\","
     		+ "\"description\": \"Descripcion\","
-    		+ "\"properties\": ["
-			+ "{\"temperatura\": \"10\"},"
-			+ "{\"peligro\": \"false\"},"
-			+ "{\"aire\": \"poco\"}"
-			+ "]"
+		+ "\"properties\": ["
+			+ "{\"name\":\"temperatura\",\"value\":\"10\"},"
+			+ "{\"name\":\"peligro\",\"value\":\"false\"},"
+			+ "{\"name\":\"aire\",\"value\":\"poco\"}"
+		+ "],"
     		+ "}";
     
     private String jsonIncidenceWithOnlyOneProperty = "{"
@@ -106,8 +106,8 @@ public class FilterTest {
     		+ "\"name\": \"Incidencia\","
     		+ "\"description\": \"Descripcion\","
     		+ "\"properties\": ["
-			+ "{\"prop\": \"val\"}"
-			+ "]"
+    			+ "{\"name\":\"prop\",\"value\":\"val\"},"
+		+ "]"
     		+ "}";
     
     private String tag = "fuego";
