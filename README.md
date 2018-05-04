@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/Arquisoft/Inci_e5b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Inci_e5b)
 
 ## Distintos módulos
-[![codecov](https://codecov.io/gh/Arquisoft/Inci_e5b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Inci_e5b)
 
 | Proyecto | Build status | Codacy | Code Coverture | 
 |----------|--------------|--------|----------------|
