@@ -23,9 +23,20 @@ before_script:
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
 - sleep 3 # give xvfb some time to start
-script: 
+script:
 - nohup bash -c "cd hsqldb/bin && ./runServer.sh &"
 - "cd InciDashboard_e5b"
 - "mvn test"
+
 - "cd ../Agents_e5b"
+- "mvn test"
+
+# Para probar Manager necesitamos tener arrancados Agents y Dashboard
+- "cd ../InciDashboard_e5b"
+- "mvn spring-boot:run &"
+- sleep 15
+- "cd ../Agents_e5b"
+- "mvn spring-boot:run &"
+- sleep 10
+- "cd ../InciManager_e5b"
 - "mvn test"
