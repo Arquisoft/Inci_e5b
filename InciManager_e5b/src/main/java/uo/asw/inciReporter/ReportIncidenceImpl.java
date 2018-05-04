@@ -24,8 +24,8 @@ public class ReportIncidenceImpl implements ReportIncidence {
 			String now = formatter.format(new Date());
 			
 			writer = new PrintWriter(new FileWriter(fileName, true));
-		    writer.println(now + " [ERROR] Error sending incidence with identifier: "+ incidence.getIdentifier() +
-					". The agent doesn't exist. Incidence data: " + incidence);
+			writer.println(now + " [ERROR] Error sending incidence with identifier: " + incidence.getIdentifier()
+					+ ". The agent data isn't valid.");
 		    
 		} catch (IOException e) {
 		   System.err.println("Writter error");
