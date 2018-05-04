@@ -1,9 +1,9 @@
-Feature: agente con datos validos envia una incidencia
+Feature: agente con datos invalidos envia una incidencia y se reporta
  
-	  Scenario: agente existente en la aplicacion añade una incidencia básica
-			    Given el agente con el login "31668313G" , el password "1234" y el kind "Person"
-			    	And los siguientes datos de la incidencia: name "Nombre" , description "Descripcion"
+	  Scenario: agente no existente en la aplicacion añade una incidencia básica y se reporta
+			    Given el agente invalido con el login "AAAAAA" , el password "1234" y el kind "Person"
+			    	And los siguientes datos de incidencia: name "Nombre" , description "Descripcion"
 			    		
-			    When el agente envía la incidencia
+			    When el agente envía su incidencia
 			    
-			    Then la incidencia es enviada correctamente
+			    Then la incidencia no se envia y se reporta

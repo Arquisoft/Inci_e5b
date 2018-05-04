@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
@@ -78,8 +77,8 @@ public class IncidenceService {
 		// Las incidencias caducan en 3 meses desde el momento en que se crean
 		Calendar fechaCaducidad = Calendar.getInstance();
 		fechaCaducidad.add(Calendar.MONTH, 3);
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		String caducidad = formatter.format(fechaCaducidad);
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String caducidad = formatter.format(fechaCaducidad.getTime());
 
 		return new Incidence(identifier, name, description, location, tags, properties, "open", caducidad);
 	}
