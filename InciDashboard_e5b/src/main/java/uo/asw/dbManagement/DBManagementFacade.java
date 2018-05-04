@@ -22,7 +22,7 @@ public interface DBManagementFacade {
 
 	public void updateFilter(Filter Filter);	
 		
-	public Agent getAgent(String login, String password, String kind);
+	public Agent getAgent(String login);
 	
 	public Operator getOperator(String identifier);
 	

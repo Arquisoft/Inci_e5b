@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import uo.asw.dbManagement.model.Agent;
@@ -97,21 +96,9 @@ public class DBManagementFacadeImpl implements DBManagementFacade{
 		filterRepository.save(filter.setId(1));
 	}
 	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
 	@Override
-	public Agent getAgent(String login, String password, String kind) {		
-		Agent agent =  agentsRepository.findByLoginAndKind(login, kind);
-		
-		if(agent!=null) {
-			
-			if(bCryptPasswordEncoder.matches(password, agent.getPassword())) {
-				return agent;
-			} else 
-				return null;
-			
-		} else return null;
+	public Agent getAgent(String login) {		
+		return  agentsRepository.findByLogin(login);
 	}
 
 	@Override

@@ -38,8 +38,6 @@ public class RIncidenceP {
 				
 		String identifier = getString(names, json, "identifier");
 		String login = getString(names, json, "login");
-		String password = getString(names, json, "password");
-		String kind = getString(names, json, "kind");
 		String name = getString(names, json, "name");
 		String description = getString(names, json, "description");
 		String location = getString(names, json, "location");
@@ -57,7 +55,7 @@ public class RIncidenceP {
 		String operatorIdentifier = getString(names, json, "operatorIdentifier");
 		String expiration = getString(names, json, "expiration");
 		
-		Agent agent = dbManagement.getAgent(login,password,kind);
+		Agent agent = dbManagement.getAgent(login);
 		
 		Operator operator = dbManagement.getOperator(operatorIdentifier);
 		
@@ -66,6 +64,9 @@ public class RIncidenceP {
 		
 		// Creamos una lista de incidencias vacias para el agente temporal
 		agent.setIncidences(new HashSet<Incidence>());
+		
+		if(operator!=null)
+			operator.setIncidences(new HashSet<Incidence>());
 		
 		Incidence incidence = new Incidence(identifier);
 		incidence
@@ -111,7 +112,6 @@ public class RIncidenceP {
 		for (int i = 0; i < jsonArray.length(); i++) {
 			JSONObject jsonProperty = jsonArray.getJSONObject(i);
 			
-//			String propertyName = JSONObject.getNames(jsonProperty)[0];
 			String propertyName = jsonProperty.getString("name");
 			String propertyValue = jsonProperty.getString("value");
 			

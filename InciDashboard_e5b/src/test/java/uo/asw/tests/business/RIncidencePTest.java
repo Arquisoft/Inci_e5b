@@ -64,7 +64,7 @@ public class RIncidencePTest {
 	    	
 	    	Incidence incidenceTest = new Incidence("uuid"); 
 	    	incidenceTest
-			.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
+			.setAgent(dbManagement.getAgent("31668313G"))
 			.setName("Incidencia")
 			.setDescription("Descripcion");
 	    	
@@ -106,7 +106,7 @@ public class RIncidencePTest {
 	    	Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-	    	.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
+	    	.setAgent(dbManagement.getAgent("31668313G"))
 	    	.setName("Incidencia")
 	    	.setDescription("Descripcion")
 	    	.setLocation("1.4,12.3")
@@ -154,7 +154,7 @@ public class RIncidencePTest {
 	    Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-			.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
+			.setAgent(dbManagement.getAgent("31668313G"))
 			.setOperator(dbManagement.getOperator("99999999A"))
 			.setName("Incidencia")
 			.setDescription("Descripcion")
@@ -206,7 +206,7 @@ public class RIncidencePTest {
 	    	Incidence incidenceTest = new Incidence("uuid");
 	    	
 	    	incidenceTest
-	    	.setAgent(dbManagement.getAgent("31668313G", "1234", "Person"))
+	    	.setAgent(dbManagement.getAgent("31668313G"))
 	    	.setOperator(dbManagement.getOperator("XXXXX"))
 	    	.setName("Incidencia")
 	    	.setDescription("Descripcion")
@@ -270,6 +270,4 @@ public class RIncidencePTest {
 	    	rIncidenceP.jsonStringToIncidence(json);
     }
     
-    
-
 }
