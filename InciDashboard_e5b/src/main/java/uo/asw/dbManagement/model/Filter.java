@@ -165,11 +165,11 @@ public class Filter {
 		return null;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public Filter setId(long id) {
+	public Filter setId(Long id) {
 		this.id = id;
 		return this;
 	}

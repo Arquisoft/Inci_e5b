@@ -93,7 +93,7 @@ public class DBManagementFacadeImpl implements DBManagementFacade{
 	
 	@Override
 	public void updateFilter(Filter filter) {		
-		filterRepository.save(filter.setId(1));
+		filterRepository.save(filter.setId(1L));
 	}
 	
 	@Override
