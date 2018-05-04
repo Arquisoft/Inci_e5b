@@ -11,7 +11,7 @@ public class Filter {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	/**
 	 * La respuesta que va a tener el filtro con cada incidencia:
