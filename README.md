@@ -3,9 +3,10 @@
 [![Build Status](https://travis-ci.org/Arquisoft/Inci_e5b.svg?branch=master)](https://travis-ci.org/Arquisoft/Inci_e5b)
 [![codecov](https://codecov.io/gh/Arquisoft/Inci_e5b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Inci_e5b)
 
-## [Loader_e5b](https://github.com/Arquisoft/Loader_e5b):
-[![Build Status](https://travis-ci.org/Arquisoft/Loader_e5b.svg?branch=master)](https://travis-ci.org/Arquisoft/Loader_e5b)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/97d6326cbcbb4c638d59879facacaf32)](https://www.codacy.com/app/jelabra/Loader_e5b?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/Loader_e5b&amp;utm_campaign=Badge_Grade)[![codecov](https://codecov.io/gh/Arquisoft/Loader_e5b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Loader_e5b)
+| Proyecto | Build status | Codacy | Code Coverture | 
+|----------|:------------:|:------:|:--------------:|
+
+[Loader_e5b](https://github.com/Arquisoft/Loader_e5b) | [![Build Status](https://travis-ci.org/Arquisoft/Loader_e5b.svg?branch=master)](https://travis-ci.org/Arquisoft/Loader_e5b) | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/97d6326cbcbb4c638d59879facacaf32)](https://www.codacy.com/app/jelabra/Loader_e5b?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/Loader_e5b&amp;utm_campaign=Badge_Grade) | [![codecov](https://codecov.io/gh/Arquisoft/Loader_e5b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Loader_e5b)
 
 ## [Agents_e5b](https://github.com/Arquisoft/Agents_e5b):
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2d1976960db9415892b85d741bb4a336)](https://www.codacy.com/app/jelabra/Agents_e5b?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/Agents_e5b&amp;utm_campaign=Badge_Grade)
