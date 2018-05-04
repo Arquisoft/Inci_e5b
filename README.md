@@ -81,7 +81,7 @@ Para más información acerca del módulo Dashboard, consultar la siguiente guí
   9. Si los datos del agente son válidos, se creará la incidencia y se devolverá un código 200 OK. Si no, no se creará 
   y se devolverá un código 404 Not Found.
  
-Para más información acerca del módulo Dashboard, consultar la siguiente guía: https://github.com/Arquisoft/InciDashboard_e5b/blob/master/README.md
+Para más información acerca del módulo Manager, consultar la siguiente guía: https://github.com/Arquisoft/InciManager_e5b/blob/master/README.md
   
 ## Probar Agents
   1. Escribir en el navegador: http://localhost:8080/
