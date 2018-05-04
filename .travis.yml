@@ -32,6 +32,7 @@ script:
 - "mvn test"
 
 # Para probar Manager necesitamos tener arrancados Agents y Dashboard
+- nohup bash -c "cd ../hsqldb/bin && ./runServer.sh &"
 - "cd ../InciDashboard_e5b"
 - "mvn spring-boot:run &"
 - sleep 30
