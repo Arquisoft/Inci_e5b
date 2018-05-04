@@ -70,7 +70,10 @@ public class IncidenceService {
 	public Incidence createIncidence(String name, String description, String location, String tagsWeb,
 			String propertiesWeb) {
 
+		// Generamos un identificador
 		String identifier = IdentifierGenerator.getIdentifier();
+		
+		// Obtenemos los tags y las propiedades
 		Set<String> tags = procesarString(tagsWeb);
 		Set<Property> properties = procesarPropiedades(propertiesWeb);
 
@@ -153,6 +156,9 @@ public class IncidenceService {
 	}
 
 	private Set<String> procesarString(String field) {
+		if(field == null)
+			return null;
+		
 		Set<String> list = new HashSet<String>();
 		for (String string : field.split(";")) {
 			list.add(string);
@@ -161,6 +167,9 @@ public class IncidenceService {
 	}
 
 	private Set<Property> procesarPropiedades(String tagsWeb) {
+		if(tagsWeb == null)
+			return null;
+		
 		Set<String> list = procesarString(tagsWeb);
 
 		Set<Property> list2 = new HashSet<Property>();
