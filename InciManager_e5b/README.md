@@ -1,4 +1,4 @@
-# InciManagement_e5b
+# InciManager_e5b
 InciManagement
 
 [![Build Status](https://travis-ci.org/Arquisoft/InciManager_e5b.svg?branch=master)](https://travis-ci.org/Arquisoft/InciManager_e5b)
