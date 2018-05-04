@@ -64,19 +64,23 @@ Para más información acerca del módulo Dashboard, consultar la siguiente guí
       * Si los datos del agente son válidos, se le indicará mediante un mensaje.
       * Si no son válidos, se le mostrará un mensaje de error.
   8. También es posible mandar incidencias a través de un servicio web REST, mediante la URI ``/api/incidence`` y el método POST.
-    * Las incidencias se enviarán en formato JSON, con la siguiente estructura:
+      * Las incidencias se enviarán en formato JSON, con la siguiente estructura:
    
    ```json
    {
-     "name": Nombre,
-     "location": Coordenadas (opcional),
-     "email": Email,
-     "id": identificador,
-     "kind": tipo de usuario,
-     "kindCode": código numérico del tipo de usuario
+     "login": "31668313G",
+     "password": "1234",
+     "kind": "Person",
+  	 "name": "Fuego en Llamaquique",
+     "description" : "Se ha producido un leve fuego en el Edificio de Ciencias",
+  	 "tags" : "calor;fuego;chamusquina",
+	 "properties" : "calor:50;aire:10"
    }
    ```
-
+   
+  9. Si los datos del agente son válidos, se creará la incidencia y se devolverá un código 200 OK. Si no, no se creará 
+  y se devolverá un código 404 Not Found.
+ 
 Para más información acerca del módulo Dashboard, consultar la siguiente guía: https://github.com/Arquisoft/InciDashboard_e5b/blob/master/README.md
   
 ## Probar Agents
