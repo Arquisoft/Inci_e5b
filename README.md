@@ -32,7 +32,7 @@
 3. Arrancar Apache Kafka
    * Para lanzarlo en Mac/Linux: ``bin/kafka-server-start.sh config/server.properties``
    * Para lanzarlo en Windows: ``bin\windows\kafka-server-start.bat config\server.properties``
-4. Arrancar IndiDashboard
+4. Arrancar InciDashboard
    * Ejecutar el siguiente comando, estando situado en la carpeta InciDashboard_e5b: ``mvn spring-boot:run``
 5. Arrancar Agents
    * Ejecutar el siguiente comando, estando situado en la carpeta Agents_e5b: ``mvn spring-boot:run``
