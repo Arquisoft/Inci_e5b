@@ -15,7 +15,7 @@ public class InsertIncidencesUsingKafkaService {
 	int i = 1;
 	
 	// this will send a message to an endpoint on which a client can subscribe
-	@Scheduled(fixedRate = 5000)
+	//@Scheduled(fixedRate = 5000)
 	public void trigger() {
 
 		String identifier = UuidGenerator.getUuid();

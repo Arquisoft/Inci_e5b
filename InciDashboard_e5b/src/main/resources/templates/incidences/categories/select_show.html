@@ -15,7 +15,7 @@
 		<th class="col-md-1"> </th>
       </tr>
     </thead>
-	<tbody>
+	<tbody style="text-align: center;">
 	  <tr th:each="category : ${categorys}">
 	    <td th:text="${category.name}">Categoria1</td>
 	    <td> 
@@ -55,7 +55,7 @@
 		<th class="col-md-1"> </th>
       </tr>
     </thead>
-	<tbody>
+	<tbody style="text-align: center;">
 	  <tr th:each="incidence : ${incidencesOfCategory}">
 	   <td th:text="${incidence.name}"> Incidencia1</td>
 	    <td th:text="${incidence.description}">Descripcion</td>
