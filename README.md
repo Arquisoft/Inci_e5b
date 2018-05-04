@@ -52,6 +52,33 @@
 
 Para más información acerca del módulo Dashboard, consultar la siguiente guía: https://github.com/Arquisoft/InciDashboard_e5b/blob/master/README.md
   
+## Probar Manager
+  1. Escribir en el navegador: http://localhost:9010/ para acceder a la parte de Manager
+  2. En el menu hacer click en ``Insertar incidencia``.
+  3. Deberá introducir un valor para todos los campos.
+    * Datos del agente de pruebas: ``Usuario: 31668313G, Password: 1234, Tipo agente: Person``.
+  4. La localización ha de seguir un formato como el de este ejemplo: ``+15.36,-10.11``.
+  5. Las etiquetas han de seguir un formato como el de este ejemplo: ``urgente;incendio;domestico`` (cada etiqueta separada por punto y coma).
+  6. Las propiedades han de seguir un formato como el de este ejemplo: ``temperatura:50;humedad:70`` (cada propiedad se indica así ``propiedad:valor``, y cada propiedad va separada por punto y coma).
+  7. Una vez rellenados todos los campos, se clicka el botón de Enviar.
+    * Si los datos del agente son válidos, se le indicará mediante un mensaje.
+    * Si no son válidos, se le mostrará un mensaje de error.
+  8. También es posible mandar incidencias a través de un servicio web REST, a través de la URI ``/api/incidence`` y mediante el método POST.
+  * Las incidencias se enviarán en formato JSON, con la siguiente estructura:
+   
+   ```json
+   {
+     "name": Nombre,
+     "location": Coordenadas (opcional),
+     "email": Email,
+     "id": identificador,
+     "kind": tipo de usuario,
+     "kindCode": código numérico del tipo de usuario
+   }
+   ```
+
+Para más información acerca del módulo Dashboard, consultar la siguiente guía: https://github.com/Arquisoft/InciDashboard_e5b/blob/master/README.md
+  
 ## Probar Agents
   1. Escribir en el navegador: http://localhost:8080/
   2. Proporcionar los datos de login para los 3 agentes disponibles (uno de cada tipo):
