@@ -18,6 +18,12 @@ import uo.asw.dbManagement.model.Agent;
 @Controller
 public class WebController {
 
+	@Autowired
+	private AgentsService agentsService;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
 	/**
 	 * Devuelve la pagina de incio login
 	 * 
@@ -28,12 +34,6 @@ public class WebController {
 	public String showView(Model model) {
 		return "log";
 	}
-
-	@Autowired
-	private AgentsService agentsService;
-	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	/**
 	 * Recibe los datos de login del usuario, busca si exite ese usuario y en

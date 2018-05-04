@@ -29,10 +29,9 @@ public class AgentControllerImpl implements AgentController{
 	public ResponseEntity<AgentMin> getAgentInfo(@RequestBody Map<String, Object> payload) {
 		
 		//Sacamos los parametros de la peticion
-		String login, password, kind;
-		login = (String) payload.get("login");
-		password = (String) payload.get("password");
-		kind = (String) payload.get("kind");
+		String login = (String) payload.get("login");
+		String password = (String) payload.get("password");
+		String kind = (String) payload.get("kind");
 		
 		AgentMin agentMin = agentsService.getAgentMin(login, password, kind);		
 		
@@ -49,13 +48,12 @@ public class AgentControllerImpl implements AgentController{
 	public ResponseEntity<Void> changeInfo(@RequestBody Map<String, Object> payload) {
 		
 		//Sacamos los parametros de la peticion
-		String login, password, kind, infoToChange, newInfo;
-		login = (String) payload.get("login");
-		password = (String) payload.get("password");
-		kind = (String) payload.get("kind");
+		String login = (String) payload.get("login");
+		String password = (String) payload.get("password");
+		String kind = (String) payload.get("kind");
 		
-		infoToChange = (String) payload.get("infoToChange");
-		newInfo = (String) payload.get("newInfo");
+		String infoToChange = (String) payload.get("infoToChange");
+		String newInfo = (String) payload.get("newInfo");
 		
 		boolean infoChangedCorrectly;
 		
@@ -80,6 +78,7 @@ public class AgentControllerImpl implements AgentController{
 
 		default:
 			infoChangedCorrectly = false;
+			break;
 		}
 				
 		if(infoChangedCorrectly){

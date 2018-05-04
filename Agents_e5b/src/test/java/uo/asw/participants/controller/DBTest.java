@@ -11,13 +11,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import uo.asw.Application;
+import uo.asw.AgentsE5bApplication;
 import uo.asw.agents.service.AgentsService;
-import uo.asw.dbManagement.AgentsRepository;
 import uo.asw.dbManagement.model.Agent;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = AgentsE5bApplication.class)
 @WebAppConfiguration
 
 public class DBTest {

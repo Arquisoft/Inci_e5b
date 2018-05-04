@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,15 +32,6 @@ public class RIncidencePTest {
 	
 	@Autowired
 	private DBManagementFacade dbManagement;
-	
-	@BeforeClass
-	public static void beforeClass() {
-	}
-	
-    @Before
-    public void setUp() {
-    	
-    }
 
     /**
      * Comprueba que RIncidenceP parsea correctamente los datos basicos

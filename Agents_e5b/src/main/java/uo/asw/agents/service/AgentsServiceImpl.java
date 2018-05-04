@@ -39,12 +39,10 @@ public class AgentsServiceImpl implements AgentsService {
 	public boolean changeEmail(String login, String password, String kind, String newEmail) {
 		Agent agent = agentDAO.getAgent(login, password, kind);
 		
-		if(agent != null){
-			if(!newEmail.isEmpty() && Check.validateEmail(newEmail)){
-				agent.setEmail(newEmail);
-				agentDAO.updateEmail(newEmail,agent.getIdentifier());
-				return true;
-			}
+		if(agent != null && !newEmail.isEmpty() && Check.validateEmail(newEmail)){
+			agent.setEmail(newEmail);
+			agentDAO.updateEmail(newEmail,agent.getIdentifier());
+			return true;
 		}
 		return false;
 	}
@@ -86,11 +84,9 @@ public class AgentsServiceImpl implements AgentsService {
 	public Agent getAgent(String identifier, String password, String kind) {
 		
 		Agent agent = agentDAO.findByIdentifier(identifier);
-		if(agent!=null) {
-			if(bCryptPasswordEncoder.matches(password, agent.getPassword()) &&
-					agent.getKind().equals(kind)) {
-				return agent;
-			}
+		if (agent != null && bCryptPasswordEncoder.matches(password, agent.getPassword())
+				&& agent.getKind().equals(kind)) {
+			return agent;
 		}
 		return null;
 	}

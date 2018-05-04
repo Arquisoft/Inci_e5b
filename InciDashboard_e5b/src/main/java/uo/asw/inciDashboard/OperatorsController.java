@@ -12,7 +12,7 @@ import uo.asw.dbManagement.model.Operator;
 import uo.asw.dbManagement.services.OperatorsService;
 import uo.asw.dbManagement.services.RolesService;
 import uo.asw.dbManagement.services.SecurityService;
-import uo.asw.validators.SignUpFormValidator;
+import uo.asw.util.validators.SignUpFormValidator;
 
 @Controller
 public class OperatorsController {

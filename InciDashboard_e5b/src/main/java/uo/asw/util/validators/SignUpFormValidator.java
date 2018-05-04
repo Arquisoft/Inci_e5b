@@ -1,11 +1,13 @@
-package uo.asw.validators;
-
-import uo.asw.dbManagement.model.Operator;
-import uo.asw.dbManagement.services.OperatorsService;
+package uo.asw.util.validators;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.validation.*;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+import uo.asw.dbManagement.model.Operator;
+import uo.asw.dbManagement.services.OperatorsService;
 
 @Component
 public class SignUpFormValidator implements Validator {

@@ -127,17 +127,13 @@ public class Filter {
 	private boolean satisfiesPropertyGreaterOperation(Incidence incidence) {
 		String incidencePropertyValue = getPropertyValueByName(incidence, propertyName);
 		
-		if(Double.parseDouble(incidencePropertyValue) > Double.parseDouble(propertyValue))
-			return true;
-		else return false;
+		return Double.parseDouble(incidencePropertyValue) > Double.parseDouble(propertyValue);
 	}
 	
 	private boolean satisfiesPropertyLessOperation(Incidence incidence) {
 		String incidencePropertyValue = getPropertyValueByName(incidence, propertyName);
 		
-		if(Double.parseDouble(incidencePropertyValue) < Double.parseDouble(propertyValue))
-			return true;
-		else return false;
+		return Double.parseDouble(incidencePropertyValue) < Double.parseDouble(propertyValue);
 	}
 	
 	private boolean satisfiesPropertyEqualsOperation(Incidence incidence) {
@@ -151,17 +147,13 @@ public class Filter {
 	private boolean satisfiesPropertyEqualsStringOperation(Incidence incidence) {
 		String incidencePropertyValue = getPropertyValueByName(incidence, propertyName);
 		
-		if(incidencePropertyValue.equalsIgnoreCase(propertyValue))
-			return true;
-		else return false;
+		return incidencePropertyValue.equalsIgnoreCase(propertyValue);
 	}
 
 	private boolean satisfiesPropertyEqualsBooleanOperation(Incidence incidence) {
 		String incidencePropertyValue = getPropertyValueByName(incidence, propertyName);
 		
-		if(Boolean.parseBoolean(incidencePropertyValue) == Boolean.parseBoolean(propertyValue))
-			return true;
-		else return false;
+		return Boolean.parseBoolean(incidencePropertyValue) == Boolean.parseBoolean(propertyValue);
 	}
 	
 	private String getPropertyValueByName(Incidence incidence, String propertyName) {

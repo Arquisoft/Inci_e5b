@@ -1,10 +1,8 @@
 package uo.asw.participants.controller;
 
-import static org.junit.Assert.*;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -14,14 +12,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import uo.asw.Application;
-import uo.asw.agents.util.Check;
+import uo.asw.AgentsE5bApplication;
 import uo.asw.agents.util.AgentMin;
-import uo.asw.agents.util.DateUtil;
+import uo.asw.agents.util.Check;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = AgentsE5bApplication.class)
 @WebAppConfiguration
 public class UtilTest {
 	

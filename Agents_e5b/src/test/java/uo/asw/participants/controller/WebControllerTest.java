@@ -18,14 +18,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import uo.asw.Application;
+import uo.asw.AgentsE5bApplication;
 import uo.asw.agents.service.AgentsService;
-import uo.asw.dbManagement.AgentsRepository;
 import uo.asw.dbManagement.model.Agent;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = AgentsE5bApplication.class)
 @WebAppConfiguration
 public class WebControllerTest {
 

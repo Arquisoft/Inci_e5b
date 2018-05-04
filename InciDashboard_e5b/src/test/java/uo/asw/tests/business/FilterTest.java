@@ -2,8 +2,6 @@ package uo.asw.tests.business;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +29,6 @@ public class FilterTest {
 	
 	@Autowired
 	private DBManagementFacade dbManagement;
-	
-	@BeforeClass
-	public static void beforeClass() {
-	}
-	
-    @Before
-    public void setUp() {
-    	
-    }
     
     private String jsonBasicIncidence = "{"
 			+ "\"identifier\": \"uuid\","
