@@ -45,7 +45,7 @@ public class OperatorsController {
 		operator.setRole(rolesService.getRoles()[0]);
 		operatorsService.addOperator(operator);
 		securityService.autoLogin(operator.getIdentifier(), operator.getPasswordConfirm());
-		return "redirect:home";
+		return "redirect:/home";
 	}
 	
 	@RequestMapping(value = "/login")

@@ -45,9 +45,9 @@ public class AddIncidenceController implements AddIncidence{
 		
 		// Si existe el agente, se devuelve a la vista inicial. Si no, a la vista de error.
 		if (incidenceService.manageIncidence(login, password, kind, incidence))
-			return "index";
+			return "redirect:/?enviadaCorrectamente=true";
 		else
-			return "error";
+			return "redirect:/managerError?mensajeError=Error al mandar la incidencia. Agente no valido.";
 		
 	}
 	

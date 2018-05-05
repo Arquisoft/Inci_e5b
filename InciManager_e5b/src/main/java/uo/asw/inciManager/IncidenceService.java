@@ -103,7 +103,7 @@ public class IncidenceService {
 			incidence.setOperator(getBestOperator());
 
 			// Se guarda la incidencia en la BD (si no es enviada por un Sensor)
-			if(incidence.getAgent().getKind() != "Sensor")
+			if( ! incidence.getAgent().getKind().equals("Sensor") )
 				saveIncidence.saveIncidence(incidence);
 
 			// Se envia la incidencia a Apache Kafka

@@ -6,15 +6,13 @@
 	<nav th:replace="fragments/nav" />
 
 	<div class="container" style="text-align: center">
-		<h2 class="danger">Incidencia no enviada</h2>
+		<h2 class="danger">Se ha producido un error</h2>
+		
 		<div class="alert alert-danger" role="alert">
-			Error al mandar la incidencia. Agente no válido.
-			<a th:href="@{/incidence/add}" class="alert-link">Volver al formulario</a>
+			<span th:text="${mensajeError}"></span>
+			<a th:href="@{/}" class="alert-link">Volver al inicio</a>
 		</div>
-		<p></p>
-		<p></p>
-		<p></p>
-		<p></p>
+		
 	</div>
 
 	<footer th:replace="fragments/footer" />
