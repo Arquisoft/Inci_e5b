@@ -32,9 +32,8 @@
 					agente:</label>
 				<div class="col-sm-10">
 					<select id="user" class="form-control" name="kind">
-						<option value="Person">Person</option>
-						<option value="Entity">Entity</option>
-						<option value="Sensor">Sensor</option>
+						<option th:each="kind : ${kinds}" th:value="${kind}"
+							th:text="${kind}">Kind</option>
 					</select>
 				</div>
 				

@@ -7,12 +7,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import uo.asw.dbManagement.model.Incidence;
+import uo.asw.util.CSVKindsReader;
 
 @Controller
 public class AddIncidenceController implements AddIncidence{
@@ -21,7 +23,10 @@ public class AddIncidenceController implements AddIncidence{
 	private IncidenceService incidenceService;
 	
 	@RequestMapping(value = "/incidence/add")
-	public String addIncidence() {
+	public String addIncidence(Model model) {
+		// Enviamos a la vista los tipos de agente, sacados del fichero csv
+		model.addAttribute("kinds", 	CSVKindsReader.getKinds());
+		
 		return "incidence/add";
 	}
 	
@@ -49,7 +54,7 @@ public class AddIncidenceController implements AddIncidence{
 	 * @param payload
 	 * @return
 	 */
-	@RequestMapping(value = "/api/incidence/add", method = RequestMethod.POST,
+	@RequestMapping(value = "/api/incidence", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<WSResponse> addIncidenceApi(@RequestBody Map<String, Object> payload) {

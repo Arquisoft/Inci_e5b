@@ -1,4 +1,4 @@
-package uo.asw.agents.config;
+package uo.asw.agents.util;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
