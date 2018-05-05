@@ -22,6 +22,7 @@ public class AddIncidenceController implements AddIncidence{
 	@Autowired
 	private IncidenceService incidenceService;
 	
+	@Override
 	@RequestMapping(value = "/incidence/add")
 	public String addIncidence(Model model) {
 		// Enviamos a la vista los tipos de agente, sacados del fichero csv
@@ -33,6 +34,7 @@ public class AddIncidenceController implements AddIncidence{
 	/**
 	 * Recoge los datos del formulario web y crea la incidencia
 	 */
+	@Override
 	@RequestMapping(value = "/incidence/add", method = RequestMethod.POST)
 	public String addIncidence(@RequestParam String login,@RequestParam String password,@RequestParam String kind, 
 			@RequestParam String name, @RequestParam String description, @RequestParam String location, 
@@ -54,6 +56,7 @@ public class AddIncidenceController implements AddIncidence{
 	 * @param payload
 	 * @return
 	 */
+	@Override
 	@RequestMapping(value = "/api/incidence", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = {MediaType.APPLICATION_JSON_VALUE})

@@ -46,7 +46,7 @@ public class PruebaJSON2String {
 			+ "{\"name\":\"humedad\",\"value\":\"0\"}"
 			+ "],"
 			+ "\"tags\":[\"tag1\",\"tag2\"],"
-			+ "\"status\":\"open\""
+			+ "\"status\":\"Abierta\""
 		+ "}";
 	
 	@Test
@@ -69,7 +69,7 @@ public class PruebaJSON2String {
 		properties.add(new Property("temperatura", "100"));
 		properties.add(new Property("humedad", "0"));
 		i.setProperties(properties);
-		i.setStatus("open");
+		i.setStatus("Abierta");
 		i.setOperator(o);
 		i.setExpiration("2019-12-30 12:32:11");
 		

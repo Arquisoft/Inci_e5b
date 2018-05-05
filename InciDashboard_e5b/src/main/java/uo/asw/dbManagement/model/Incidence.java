@@ -47,7 +47,7 @@ public class Incidence {
 	)	
 	private Set<Property> properties = new HashSet<>();
 		
-	private String status; //open, in process, closed, canceled
+	private String status; //Abierta, En proceso, Cerrada, Cancelada
 	private String operatorComments;
 	private String expiration;
 	private boolean dangerous;

@@ -80,7 +80,7 @@ public class RIncidencePTest {
 			    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
 			    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
 		    			+ "],"
-		    			+ "\"status\": \"open\","
+		    			+ "\"status\": \"Abierta\","
 		    			+ "\"expiration\": \"14:60\""
 	    			+ "}";
 	    		    	
@@ -101,7 +101,7 @@ public class RIncidencePTest {
 	    	.setLocation("1.4,12.3")
 	    	.setTags( tagsTest )
 	    	.setProperties(propertiesTest)
-	    	.setStatus("open")
+	    	.setStatus("Abierta")
 	    	.setExpiration("14:60");
 	    	
 	    	assertTrue(incidence.equalFields(incidenceTest));
@@ -127,7 +127,7 @@ public class RIncidencePTest {
 				    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
 				    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
 			    			+ "],"
-			    			+ "\"status\": \"open\","
+			    			+ "\"status\": \"Abierta\","
 			    			+ "\"operatorIdentifier\": \"99999999A\","
 			    			+ "\"expiration\": \"14:60\""
 		    			+ "}";
@@ -150,7 +150,7 @@ public class RIncidencePTest {
 			.setLocation("1.4,12.3")
 			.setTags( tagsTest )
 			.setProperties(propertiesTest)
-			.setStatus("open")
+			.setStatus("Abierta")
 			.setExpiration("14:60");
 	    	
 	    	assertTrue(incidence.equalFields(incidenceTest));
@@ -179,7 +179,7 @@ public class RIncidencePTest {
 		    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
 		    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
 	    			+ "],"
-	    			+ "\"status\": \"open\","
+	    			+ "\"status\": \"Abierta\","
 	    			+ "\"operatorIdentifier\": \"XXXXX\","
 	    			+ "\"expiration\": \"14:60\""
 	    			+ "}";
@@ -202,7 +202,7 @@ public class RIncidencePTest {
 	    	.setLocation("1.4,12.3")
 	    	.setTags( tagsTest )
 	    	.setProperties(propertiesTest)
-	    	.setStatus("open")
+	    	.setStatus("Abierta")
 	    	.setExpiration("14:60");
 	    	
 	    	assertTrue(incidence.equalFields(incidenceTest) && incidence.getOperator()==null);
@@ -226,7 +226,7 @@ public class RIncidencePTest {
 			    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
 			    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
 		    			+ "],"
-		    			+ "\"status\": \"open\","
+		    			+ "\"status\": \"Abierta\","
 		    			+ "\"expiration\": \"14:60\""
 	    			+ "}";
 	    	
@@ -252,7 +252,7 @@ public class RIncidencePTest {
 				    			+ "{\"name\":\"prop1\",\"value\":\"val1\"},"
 				    			+ "{\"name\":\"prop2\",\"value\":\"val2\"}"
 			    			+ "],"
-			    			+ "\"status\": \"open\","
+			    			+ "\"status\": \"Abierta\","
 			    			+ "\"expiration\": \"14:60\""
 		    			+ "}";
 	    	

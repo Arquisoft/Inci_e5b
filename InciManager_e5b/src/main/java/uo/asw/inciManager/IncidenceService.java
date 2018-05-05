@@ -3,6 +3,7 @@ package uo.asw.inciManager;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -21,8 +22,10 @@ import org.springframework.web.client.RestTemplate;
 import uo.asw.apacheKafka.KafkaProducer;
 import uo.asw.apacheKafka.SendIncidence;
 import uo.asw.dbManagement.GetAgent;
+import uo.asw.dbManagement.GetIncidencesSentByAgent;
 import uo.asw.dbManagement.GetOperator;
 import uo.asw.dbManagement.SaveIncidence;
+import uo.asw.dbManagement.model.Agent;
 import uo.asw.dbManagement.model.Incidence;
 import uo.asw.dbManagement.model.Operator;
 import uo.asw.dbManagement.model.Property;
@@ -45,6 +48,9 @@ public class IncidenceService {
 
 	@Autowired
 	private ReportIncidence reportIncidence;
+
+	@Autowired
+	private GetIncidencesSentByAgent getIncidencesSentByAgent;
 
 	private static final Logger logger = Logger.getLogger(KafkaProducer.class);
 
@@ -83,7 +89,7 @@ public class IncidenceService {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String caducidad = formatter.format(fechaCaducidad.getTime());
 
-		return new Incidence(identifier, name, description, location, tags, properties, "open", caducidad);
+		return new Incidence(identifier, name, description, location, tags, properties, "Abierta", caducidad);
 	}
 
 	public boolean manageIncidence(String login, String password, String kind, Incidence incidence) {
@@ -96,8 +102,9 @@ public class IncidenceService {
 			// Se recupera un operario de la BD y se asocia con la incidencia
 			incidence.setOperator(getBestOperator());
 
-			// Se guarda la incidencia en la BD
-			saveIncidence.saveIncidence(incidence);
+			// Se guarda la incidencia en la BD (si no es enviada por un Sensor)
+			if(incidence.getAgent().getKind() != "Sensor")
+				saveIncidence.saveIncidence(incidence);
 
 			// Se envia la incidencia a Apache Kafka
 			sendIncidence.sendIncidence(generarJSON(incidence));
@@ -182,4 +189,18 @@ public class IncidenceService {
 		}
 		return list2;
 	}
+	
+	public List<Incidence> getIncidencesSentByAgent(String login, String password, String kind){
+		// Si el agente con esos datos existe, recuperamos su info de la BD y sacamos sus incidencias
+		if (loginCorrecto(login, password, kind)) {
+			Agent agent = getAgent.getAgent(login);
+			
+			return getIncidencesSentByAgent.getIncidencesSentByAgent(agent.getIdentifier());
+		} 
+		// Si no, retornamos null
+		else {
+			return null;
+		}
+	}
+	
 }
