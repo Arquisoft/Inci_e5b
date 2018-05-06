@@ -36,6 +36,8 @@
    * Ejecutar el siguiente comando, estando situado en la carpeta InciDashboard_e5b: ``mvn spring-boot:run``
 5. Arrancar Agents
    * Ejecutar el siguiente comando, estando situado en la carpeta Agents_e5b: ``mvn spring-boot:run``
+6. Arrancar Manager
+   * Ejecutar el siguiente comando, estando situado en la carpeta InciManager_e5b: ``mvn spring-boot:run``
 
 ## Probar Dashboard
   1. Escribir en el navegador: http://localhost:8090/ para acceder a la parte de Dashboard
