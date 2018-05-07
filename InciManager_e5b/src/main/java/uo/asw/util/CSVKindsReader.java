@@ -11,7 +11,7 @@ import java.util.Set;
 public class CSVKindsReader {
 	
 	private static HashMap<String,Integer> map = new HashMap<String, Integer>();
-	private static final String rutaCsvFile = "src/main/resources/tipoagente.csv"; 
+	private static final String rutaCsvFile = "../tipoagente.csv";
 
 	public static void readCSV() {
 		BufferedReader br = null;
