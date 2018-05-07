@@ -16,6 +16,8 @@ public interface DBManagementFacade {
 	
 	public List<Incidence> getIncidencesOfCategory(String category,String operator_identifier);
 	
+	
+	// Other methods (implementention methods, not important)
 	public Incidence getIncidence(Long idIncidence);
 	
 	public Filter getFilter();
