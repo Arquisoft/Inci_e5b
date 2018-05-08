@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Spring MVC Form Handling</title>
+</head>
+<body>
+    
+<h2>Agent Information: </h2>
+
+   <table>
+    <tr>
+        <td>Name: </td>
+        <td><span th:text="${session.agent.name}"/></td>
+    </tr>
+     <tr>
+        <td>Email: </td>
+        <td><span th:text="${session.agent.email}"/></td>
+    </tr>
+     <tr>
+        <td>Location: </td>
+        <td><span th:text="${session.agent.location}"/></td>
+    </tr>
+    <tr>
+    	<td>Id: </td>
+    	<td><span th:text="${session.agent.identifier}"/></td>
+    </tr>
+    <tr>
+    	<td>Kind: </td>
+    	<td><span th:text="${session.agent.kind}"/></td>
+    </tr>
+     <tr>
+    	<td>Kindcode: </td>
+    	<td><span th:text="${session.tipoCodigo}"/></td>
+    </tr>
+    
+    <tr>
+
+    	<td><a href="changeInfo">Change Info</a></td>
+    	<td> <a href="/">Return to Portal</a></td>
+    </tr>
+</table>  
+<br/>
+<i><span th:if="${resultado != null}" th:text="${resultado}">Resultado</span></i>
+</body>
+</html>

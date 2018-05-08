@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+
+	<nav th:replace="fragments/nav" />
+
+	<div class="container" style="text-align: center">
+		<h2 class="danger">Se ha producido un error</h2>
+		
+		<div class="alert alert-danger" role="alert">
+			<span th:text="${mensajeError}"></span>
+			<a th:href="@{/}" class="alert-link">Volver al inicio</a>
+		</div>
+		
+	</div>
+
+	<footer th:replace="fragments/footer" />
+
+</body>
+</html>

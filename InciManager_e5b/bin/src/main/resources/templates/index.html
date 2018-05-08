@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+
+	<nav th:replace="fragments/nav" />
+
+	<div class="container" style="text-align: center">
+		<h2>Sistema de creación de incidencias y visualización de incidencias enviadas</h2>
+		
+		<br>
+		<br>
+		
+		<div th:if="${enviadaCorrectamente}" class="alert alert-success" role="alert">
+			<strong>Incidencia enviada correctamente</strong>
+		</div>
+		
+		<br>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Insertar incidencias</h3>
+			</div>
+			<div class="panel-body">
+				Para crear una incidencia, haga click en 'Enviar incidencia', en la parte superior.	
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Visualizar incidencias enviadas</h3>
+			</div>
+			<div class="panel-body">
+				Para visualizar sus incidencias enviadas, haga click en 'Incidencias enviadas', en la parte superior.	
+			</div>
+		</div>
+	
+	</div>
+
+	<footer th:replace="fragments/footer" />
+
+</body>
+</html>

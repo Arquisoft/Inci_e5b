@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+	
+	<nav th:replace="fragments/nav" />
+	
+	<div class="container">
+		<h2>Incidencias enviadas</h2>
+
+		<table class="table table-hover" id="tableIncidencesSent">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Descripcion</th>
+					<th>Estado</th>
+					<th>Comentarios del operario</th>
+				</tr>
+			</thead>
+			<tbody style="text-align: center;">
+				<tr th:each="incidence : ${incidences}">
+					<td th:text="${incidence.name}">Incidencia1</td>
+					<td th:text="${incidence.description}">Descripcion</td>
+					<td th:text="${incidence.status}">Estado1</td>
+					<td th:text="${incidence.operatorComments != null} ? ${incidence.operatorComments} : '-'">Comentarios</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	
+	<footer th:replace="fragments/footer" />
+	
+</body>
+</html>

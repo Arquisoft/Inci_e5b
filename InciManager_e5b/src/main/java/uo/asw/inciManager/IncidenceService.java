@@ -24,8 +24,10 @@ import uo.asw.apacheKafka.SendIncidence;
 import uo.asw.dbManagement.GetAgent;
 import uo.asw.dbManagement.GetIncidencesSentByAgent;
 import uo.asw.dbManagement.GetOperator;
+import uo.asw.dbManagement.SaveCategory;
 import uo.asw.dbManagement.SaveIncidence;
 import uo.asw.dbManagement.model.Agent;
+import uo.asw.dbManagement.model.Category;
 import uo.asw.dbManagement.model.Incidence;
 import uo.asw.dbManagement.model.Operator;
 import uo.asw.dbManagement.model.Property;
@@ -51,6 +53,9 @@ public class IncidenceService {
 
 	@Autowired
 	private GetIncidencesSentByAgent getIncidencesSentByAgent;
+	
+	@Autowired
+	private SaveCategory saveCategory;
 
 	private static final Logger logger = Logger.getLogger(KafkaProducer.class);
 
@@ -88,6 +93,12 @@ public class IncidenceService {
 		fechaCaducidad.add(Calendar.MONTH, 3);
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String caducidad = formatter.format(fechaCaducidad.getTime());
+		
+		// Guardamos las categorias
+		for (String tag : tags) {
+            saveCategory.saveCategory(new Category(tag));
+		}
+
 
 		return new Incidence(identifier, name, description, location, tags, properties, "Abierta", caducidad);
 	}
